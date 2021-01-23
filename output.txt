@@ -1,0 +1,32 @@
+Intermediate code for main: 
+Expr(
+		New Fac
+		VariableLoad NAME 6 NAME 0
+		VariableLoad NAME 7 NAME 6 0
+		INTEGER_LITERAL  10
+		CALL Factorial$ComputeFac
+		NAME 9  Println
+)
+MAIN END
+
+Fac$ComputeFac
+BEGIN
+		INTEGER_LITERAL  1
+		PrimaryExpression Lessthen{
+			NAME 4 LessThan TEMP 1 NAME 3
+		}
+		IF( NAME 4 ){
+		INTEGER_LITERAL  1
+		AssignmentStatement{TEMP 2 NAME 5
+		Else{
+		VariableLoad NAME 6 TEMP 0
+		VariableLoad NAME 7 NAME 6 0
+		INTEGER_LITERAL  1
+		NAME 9 MINUS TEMP 1 NAME 8
+		CALL Fac$ComputeFac
+		NAME 11 TIMES TEMP 1 NAME 10
+		AssignmentStatement{TEMP 2 NAME 11
+Label 1		}
+RETURN
+		TEMP 2
+END
